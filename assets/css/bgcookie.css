@@ -1,0 +1,35 @@
+#cookie-footer {
+	background: #eae7d5;
+	color: #000;
+	position: fixed;
+	z-index: 9999;
+	padding: 16px 28px;
+	bottom: 0;
+	line-height: 1.5em;
+}
+
+#cookie-footer a {
+	color: #000;
+	text-decoration: underline;
+}
+
+#cookie-footer .close {
+	color: #1c799e;
+	display: block;
+  padding: .4em .8em;
+  font-size: .9em;
+  font-weight: 700;
+  border: 2px solid #eae7d5;
+  text-align: center;
+  white-space: nowrap;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  min-width: 140px;
+  float: right;
+  margin-left: 25px;
+}
+#cookie-footer a.close {
+	text-decoration: none;
+}

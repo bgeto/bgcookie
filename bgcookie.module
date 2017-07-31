@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * Implements hook_block_info()
+ */
+function camping_cookie_block_info() {
+  return array(
+    'cookie_footer' => array(
+      'info' => t('Alert cookie footer'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+
+function camping_cookie_block_view($delta = '') {
+  global $language;
+  $content = '';
+
+  if ($delta == 'cookie_footer') {
+    drupal_add_css(drupal_get_path('module', 'bgcookie') . '/assets/css/bgcookie.css');
+    drupal_add_js(drupal_get_path('module', 'bgcookie') .'/assets/js/js.cookie.js', 'file');
+    drupal_add_js(drupal_get_path('module', 'bgcookie') .'/assets/js/bgcookie.js', 'file');
+    
+    $infos['cgvUrl'] = '';
+    $content = theme('cookie_footer', array('infos' => $infos));
+      
+    return array(
+      'content' => $content,
+    );
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function camping_cookie_theme($existing, $type, $theme, $path) {
+  return array(
+    'cookie_footer' => array(
+      'template' => '/templates/cookie-footer',
+      'arguments' => array(
+        'infos' => NULL
+      ),
+    ),
+  );
+}

@@ -1,0 +1,6 @@
+name = bgcookie
+description = Provide cookie
+core = 7.x
+package = bg
+version = 7.x-1.0
+project = bgcookie
